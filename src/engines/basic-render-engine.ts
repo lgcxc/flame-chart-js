@@ -233,6 +233,7 @@ export class BasicRenderEngine extends EventEmitter {
     renderStroke(color: string, x: number, y: number, w: number, h: number) {
         this.setCtxValue('strokeStyle', color);
         this.ctx.setLineDash([]);
+        this.ctx.lineWidth = 1.5; // 设置选中线宽度
         this.ctx.strokeRect(x, y, w, h);
     }
 

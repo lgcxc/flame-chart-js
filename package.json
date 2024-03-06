@@ -1,6 +1,6 @@
 {
-  "name": "flame-chart-js",
-  "version": "3.3.0",
+  "name": "@lgcxc/flame-chart-js",
+  "version": "0.0.3",
   "description": "",
   "type": "module",
   "source": "src/index.ts",
@@ -48,14 +48,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pyatyispyatil/flame-chart-js.git"
+    "url": "git+https://github.com/lgcxc/flame-chart-js.git"
   },
-  "author": "Nikolay Ryabov",
+  "author": "lgcxc",
+  "private": false,
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pyatyispyatil/flame-chart-js/issues"
+    "url": "https://github.com/lgcxc/flame-chart-js/issues"
   },
-  "homepage": "https://github.com/pyatyispyatil/flame-chart-js#readme",
+  "homepage": "https://github.com/lgcxc/flame-chart-js#readme",
   "dependencies": {
     "color": "^3.1.3",
     "events": "^3.2.0"
@@ -114,5 +115,8 @@
     "typescript": "^5.2.2",
     "typescript-plugin-css-modules": "^5.0.1",
     "use-resize-observer": "^9.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

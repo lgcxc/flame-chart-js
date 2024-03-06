@@ -221,6 +221,9 @@ export class RenderEngine extends BasicRenderEngine {
                         size.position -= delta;
                     }
                 });
+            } else {
+                console.log('跳出while循环');
+                break;
             }
         }
 

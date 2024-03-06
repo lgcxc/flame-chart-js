@@ -2,7 +2,7 @@
 
 [![npm flame-chart-js package](https://img.shields.io/npm/v/flame-chart-js)](https://www.npmjs.com/package/flame-chart-js)
 
-![image](https://github.com/pyatyispyatil/flame-chart-js/assets/4976306/0e48f413-ead8-46f9-9fb6-9da3fbb2b44e)
+![image](https://github.com/lgcxc/flame-chart-js/assets/4976306/0e48f413-ead8-46f9-9fb6-9da3fbb2b44e)
 
 ### Installation
 
@@ -10,11 +10,11 @@
 
 ### Demo
 
-https://pyatyispyatil.github.io/flame-chart-js
+https://lgcxc.github.io/flame-chart-js
 
 ### Roadmap
 
-You can find some [plans on the wiki](https://github.com/pyatyispyatil/flame-chart-js/wiki/Roadmap)
+You can find some [plans on the wiki](https://github.com/lgcxc/flame-chart-js/wiki/Roadmap)
 
 ### Usage
 
@@ -376,7 +376,7 @@ const flameChart = new FlameChart({
 
 After applying this style, the blocks of the flame chart will be 20 pixels high instead of 16 pixels.
 
-To learn more about styles, you can take a look at [the example](https://pyatyispyatil.github.io/flame-chart-js) - 
+To learn more about styles, you can take a look at [the example](https://lgcxc.github.io/flame-chart-js) - 
 all styles will be available in one of the dropdowns on the left side of the interface.
 
 ##### Custom Tooltip
@@ -407,7 +407,7 @@ chart.setSettings({
 });
 ```
 
-#### [Data types](https://github.com/pyatyispyatil/flame-chart-js/blob/master/src/types.ts#L1)
+#### [Data types](https://github.com/lgcxc/flame-chart-js/blob/master/src/types.ts#L1)
 
 ```ts
 type Mark = {
