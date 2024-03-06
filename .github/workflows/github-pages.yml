@@ -21,29 +21,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-    github-pages:
-        name: 'Github Pages'
-        runs-on: ubuntu-latest
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        steps:
-            - name: Set up Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  registry-url: https://registry.npmjs.org/
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+            node-version: 20
+            registry-url: https://registry.npmjs.org/
 
-            - name: Checkout
-              uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
 
-            - run: npm ci
-            - run: npm run build:example
+      - name: Build
+        run: npm run build:example
 
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                # Upload dist repository
-                path: './example/dist'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload dist repository
+          path: './example/dist'
 
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
