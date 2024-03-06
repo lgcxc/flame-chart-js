@@ -1,6 +1,6 @@
 # flame-chart-js
 
-[![npm flame-chart-js package](https://img.shields.io/npm/v/flame-chart-js)](https://www.npmjs.com/package/flame-chart-js)
+[![npm flame-chart-js package](https://img.shields.io/npm/v/@lgcxc/flame-chart-js)](https://www.npmjs.com/package/@lgcxc/flame-chart-js)
 
 ![image](https://github.com/lgcxc/flame-chart-js/assets/4976306/0e48f413-ead8-46f9-9fb6-9da3fbb2b44e)
 
