@@ -2,11 +2,11 @@
 
 [![npm flame-chart-js package](https://img.shields.io/npm/v/@lgcxc/flame-chart-js)](https://www.npmjs.com/package/@lgcxc/flame-chart-js)
 
-![image](https://github.com/lgcxc/flame-chart-js/assets/4976306/0e48f413-ead8-46f9-9fb6-9da3fbb2b44e)
+![image](https://github.com/pyatyispyatil/flame-chart-js/assets/4976306/0e48f413-ead8-46f9-9fb6-9da3fbb2b44e)
 
 ### Installation
 
-`npm i flame-chart-js`
+`npm i @lgcxc/flame-chart-js`
 
 ### Demo
 
@@ -23,7 +23,7 @@ You can find some [plans on the wiki](https://github.com/lgcxc/flame-chart-js/wi
 You can ignore any of the marks, data, or waterfall arguments to initialize only the items you want. The flame chart will automatically adjust and hide unused plugins.
 
 ```js
-import { FlameChart } from 'flame-chart-js';
+import { FlameChart } from '@lgcxc/flame-chart-js';
 
 const canvas = document.getElementById('canvas');
 
@@ -123,7 +123,7 @@ class FlameChart {
 #### Usage with plugins
 
 ```ts
-import { FlameChartContainer, TimeGridPlugin, MarksPlugin, FlameChartPlugin } from 'flame-chart-js';
+import { FlameChartContainer, TimeGridPlugin, MarksPlugin, FlameChartPlugin } from '@lgcxc/flame-chart-js';
 
 const canvas = document.getElementById('canvas');
 
@@ -145,7 +145,7 @@ const flameChart = new FlameChartContainer({
 
 Default flame chart:
 ```tsx
-import { FlameChartComponent } from 'flame-chart-js/react';
+import { FlameChartComponent } from '@lgcxc/flame-chart-js/react';
 
 export const DefaultFlameChart = ({
     flameChartData,
@@ -172,7 +172,7 @@ export const DefaultFlameChart = ({
 
 Custom flame chart:
 ```tsx
-import { FlameChartContainerComponent } from 'flame-chart-js/react';
+import { FlameChartContainerComponent } from '@lgcxc/flame-chart-js/react';
 
 const CustomFlameChart = ({ flameChartData, stylesSettings }) => {
   const plugins = useMemo(() => {
@@ -497,7 +497,7 @@ window.addEventListener('resize', () => {
 ##### You can create your own plugin
 
 ```ts
-import { UIPlugin } from 'flame-chart-js';
+import { UIPlugin } from '@lgcxc/flame-chart-js';
 
 class MyPlugin extends UIPlugin {
     constructor({ name = 'myOwnPlugin' }) {
