@@ -481,7 +481,7 @@ export class BasicRenderEngine extends EventEmitter {
     copy(engine: OffscreenRenderEngine) {
         const ratio = this.isSafari ? 1 : engine.pixelRatio;
 
-        if (engine.canvas.height) {
+        if (engine.canvas.height && engine.canvas.width) {
             this.ctx.drawImage(
                 engine.canvas,
                 0,
