@@ -7,10 +7,12 @@ on:
 
 jobs:
     tagged-release:
-        name: 'Tagged Release'
-        runs-on: 'ubuntu-latest'
-
-        steps:
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      name: 'Tagged Release'
+      runs-on: 'ubuntu-latest'
+      steps:
 #            - name: 'Publish release'
 #              uses: 'marvinpinto/action-automatic-releases@latest'
 #              with:
@@ -18,23 +20,23 @@ jobs:
 #                  prerelease: false
 #                  files: |
 #                      LICENSE.txt
-            - name: Checkout
-              uses: actions/checkout@v4
+        - name: Checkout
+          uses: actions/checkout@v4
 
-            - name: Set up Node
-              uses: actions/setup-node@v3
-              with:
-                  node-version: 20
-                  registry-url: https://registry.npmjs.org/
+        - name: Set up Node
+          uses: actions/setup-node@v3
+          with:
+              node-version: 20
+              registry-url: https://registry.npmjs.org/
 
-            - name: Install dependencies
-              run: npm ci
+        - name: Install dependencies
+          run: npm ci
 
-            - name: Build
-              run: npm run build:npm
+        - name: Build
+          run: npm run build:npm
 
-            - name: npm publish
-              run: npm publish
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        - name: npm publish
+          run: npm publish
+          env:
+              NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
