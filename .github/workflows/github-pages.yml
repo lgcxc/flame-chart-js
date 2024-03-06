@@ -5,28 +5,45 @@ on:
         tags:
             - 'v*'
 
+    # 这个选项可以使你手动在 Action tab 页面触发工作流
+    workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages。
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: write
+
+# 允许一个并发的部署
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
 jobs:
     github-pages:
         name: 'Github Pages'
         runs-on: ubuntu-latest
 
         steps:
-            - name: Setup NodeJS
-              uses: actions/setup-node@v2.4.1
+            - name: Set up Node
+              uses: actions/setup-node@v4
               with:
                   node-version: 20
                   registry-url: https://registry.npmjs.org/
 
             - name: Checkout
-              uses: actions/checkout@v2.4.0
+              uses: actions/checkout@v4
 
             - run: npm ci
             - run: npm run build:example
 
-            - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3.7.3
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_branch: github-pages
-                  publish_dir: ./example/dist
-                  destination_dir: ./
+                # Upload dist repository
+                path: './example/dist'
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
