@@ -9,7 +9,6 @@ jobs:
   tagged-release:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     name: 'Tagged Release'
     runs-on: 'ubuntu-latest'
     steps:
